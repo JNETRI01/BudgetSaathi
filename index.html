@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Budgetसाथी - Saath hai to savings hai</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="favicon.ico" type="image/budget-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Hind:wght@700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<header class="main-header">
+  
+  <div></div> <!-- Empty left column -->
+
+  <div class="brand-wrapper">
+    <div class="rupee-badge">₹</div>
+    <div class="brand-text">
+      <h1 class="brand-title">
+        Budget<span class="saathi-highlight">साथी</span>
+      </h1>
+      <div class="brand-tagline">
+        Saath hai to saving hai......!!
+      </div>
+    </div>
+  </div>
+
+  <button id="themeToggle" class="theme-toggle">
+    <span id="themeIcon">🌙</span>
+  </button>
+
+</header>
+
+
+<div class="container">
+
+  <!-- LEFT PANEL -->
+  <div class="left-panel">
+
+    <h2 id="greeting">Hello 👋</h2>
+
+    <div class="card">
+      <h3>Set Monthly Details</h3>
+      <input type="text" id="nameInput" placeholder="Your Name">
+      <input type="number" id="incomeInput" placeholder="Monthly Income">
+      <input type="number" id="limitInput" placeholder="Spending Limit">
+      <input type="number" id="goalInput" placeholder="Savings Goal">
+      <button id="setIncomeBtn">Save Details</button>
+    </div>
+
+    <div class="card">
+      <h3>Add Expense</h3>
+      <input type="text" id="expenseDesc" placeholder="Description">
+      <input type="number" id="expenseAmount" placeholder="Amount">
+      <select id="categorySelect">
+        <option>Food</option>
+        <option>Travel</option>
+        <option>Study</option>
+        <option>Shopping</option>
+        <option>Other</option>
+      </select>
+      <button id="addExpenseBtn">Add Expense</button>
+    </div>
+
+    <div class="card progress-card">
+      <h3>Spending Progress</h3>
+      <div class="progress-container">
+        <div id="progressBar"></div>
+      </div>
+    </div>
+
+    <div id="warningBox"></div>
+
+    <button id="resetMonthBtn" class="danger">Reset Month</button>
+    <button id="exportCSV">Export CSV</button>
+
+  </div>
+
+  <!-- RIGHT PANEL -->
+  <div class="right-panel">
+
+    <div class="stats">
+      <div class="stat-card">
+        <h3>Balance</h3>
+        <p id="balanceDisplay">₹0</p>
+      </div>
+
+      <div class="stat-card">
+        <h3>Expenses</h3>
+        <p id="expenseDisplay">₹0</p>
+      </div>
+
+      <div class="stat-card">
+        <h3>Savings</h3>
+        <p id="savingsDisplay">₹0</p>
+      </div>
+    </div>
+
+    <div class="card chart-card">
+      <canvas id="expenseChart"></canvas>
+    </div>
+
+    <div class="card">
+      <h3>Monthly Comparison</h3>
+      <p id="monthlyComparison"></p>
+    </div>
+
+    <div class="card">
+      <h3>Transaction History</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Description</th>
+            <th>Category</th>
+            <th>Amount</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="transactionTable"></tbody>
+      </table>
+    </div>
+
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

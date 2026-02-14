@@ -1,0 +1,381 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+/* ================= HEADER ================= */
+
+.main-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  display: grid;
+  grid-template-columns: 1fr auto 1fr; 
+  align-items: center;
+
+  padding: 20px 40px;
+  background: #0f0f19; 
+}
+
+/* ================= BRAND WRAPPER ================= */
+
+.brand-wrapper {
+  display: flex;
+  align-items: flex-start;   /* important change */
+  gap: 6px;
+}
+
+/* ================= BIGGER FLOATING RUPEE ================= */
+
+.rupee-badge {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 38px;
+  font-weight: bold;
+  color: white;
+
+  background: radial-gradient(circle at 30% 30%, #00f2fe, #005bea);
+
+  box-shadow:
+    0 0 25px rgba(0,242,254,0.6),
+    0 8px 20px rgba(0,0,0,0.4);
+
+  animation: floatLogo 4s ease-in-out infinite;
+
+  margin-right: 4px;   /* keep tight */
+  margin-top: 0px;     /* balanced vertical */
+  border: 1px solid rgba(255,255,255,0.15);
+
+}
+
+
+
+@keyframes floatLogo {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0px); }
+}
+
+/* ================= TEXT ================= */
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.brand-title {
+  color: white !important;
+  font-size: 50px;
+  font-weight: 800;
+  font-family: 'Poppins', 'Noto Sans Devanagari', sans-serif;
+  display: flex;
+  align-items: center;
+}
+
+/* Budget stable */
+.budget-text {
+  color: white;
+  opacity: 0.9;
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+}
+
+/* Saathi gradient glow */
+.saathi-text {
+  margin-left: 10px;
+  font-weight: 900;
+
+  background: linear-gradient(
+    90deg,
+    #00f2fe,
+    #00ffb3,
+    #ffdd00,
+    #00f2fe
+  );
+
+  background-size: 300%;
+  background-clip: text;
+  -webkit-background-clip: text;
+
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+
+  display: inline-block;
+
+  animation: gradientMove 6s linear infinite;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% center}
+  100% { background-position: 300% center }
+}
+
+.saathi-highlight {
+  background: linear-gradient(
+    90deg,
+    #00f2fe,
+    #4facfe,
+    #43e97b,
+    #00f2fe
+  );
+
+  background-size: 200% auto;
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+
+  font-weight: 800;
+  animation: saathiFlow 6s linear infinite;
+}
+@keyframes saathiFlow {
+  to {
+    background-position: 200% center;
+  }
+}
+
+
+/* ================= TAGLINE ================= */
+
+.brand-tagline {
+  margin-top: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  color: rgba(255,255,255,0.85);
+  text-align: center;
+  max-width: 600px;
+}
+
+/* ================= TOGGLE ================= */
+
+.theme-toggle {
+  position: absolute;
+  right: 30px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 20px;
+  background: linear-gradient(135deg, #00f2fe, #005bea);
+  color: white;
+
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+
+  transition: transform 0.2s ease,0.3s ease;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1);
+  background: rgba(255,255,255,0.25);
+}
+
+
+
+body {
+  background: linear-gradient(135deg, #1e1e2f, #2c3e50);
+  color: white;
+  transition: 0.3s;
+}
+
+body.light {
+  background: linear-gradient(135deg, #eef2f7, #dce3ec);
+  color: #1f2937;
+}
+
+body.light .brand-title {
+  color: white !important;
+}
+
+body.light .left-panel,
+body.light .right-panel {
+  background: #f4f5f7;  /* light gray instead of white */
+}
+
+body.light .card {
+  background: #ffffff;   /* card stands out */
+}
+
+body.light input,
+body.light select {
+  background: #f9fafc;
+  border: 1px solid #d1d5db;
+  color: #111;
+}
+body.light table {
+  background: white;
+}
+
+body.light th {
+  background: #f3f4f6;
+}
+
+body.light td {
+  border-bottom: 1px solid #e5e7eb;
+}
+#greeting {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;   /* or adjust as per card height */
+  font-size: 22px;
+  font-weight: 600;
+}
+
+
+
+.container {
+  display: flex;
+  padding: 20px 0;
+  gap: 30px;
+}
+.left-panel,
+.right-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;     /* space between cards */
+  padding: 0;    /* remove panel padding */
+  margin: 0;     /* remove panel margin */
+  background: none; /* remove visual background */
+}
+
+
+.left-panel {
+  flex: 1;
+}
+
+.right-panel {
+  flex: 2;
+}
+
+.card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: scale(1.015);   /* very subtle */
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+.left-panel .card,
+.right-panel .card {
+  width: 100%;
+  box-sizing: border-box;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+
+input, select, button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 8px;
+  border: none;
+}
+
+button {
+  background: #4CAF50;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+button.danger {
+  background: red;
+}
+
+.stats {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.stat-card {
+  flex: 1;
+  background: rgba(255,255,255,0.08);
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+}
+
+.stat-card p {
+  font-size: 22px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.progress-container {
+  width: 100%;
+  height: 20px;
+  background: #444;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+#progressBar {
+  height: 100%;
+  width: 0%;
+  background: green;
+  border-radius: 10px;
+  transition: 0.4s;
+}
+
+#warningBox {
+  display: none;
+  background: red;
+  padding: 15px;
+  border-radius: 10px;
+  font-weight: bold;
+  text-align: center;
+  animation: pulse 1s infinite;
+}
+body.light #warningBox {
+  background: #f87171;   /* light red */
+  color: #fff;
+}
+
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+table {
+  width: 100%;
+  margin-top: 10px;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 8px;
+  text-align: center;
+}
+
+th {
+  background: rgba(255,255,255,0.2);
+}
+
+.chart-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
