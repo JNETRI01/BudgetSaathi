@@ -1,4 +1,4 @@
-# 💰 Budgetसाथी – Saath hai to Savings hai
+# 💰 Budgetसाथी - Saath hai to Savings hai
 
 **Budgetसाथी** is a modern, interactive, and visually appealing personal finance tracker designed to help you manage your income, track expenses, set savings goals, and understand your spending patterns.
 
